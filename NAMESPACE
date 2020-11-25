@@ -1,0 +1,65 @@
+importFrom("DPQ"
+         , dntJKBf # ~/R/Pkgs/DPQ/R/t-nonc-fn.R
+         , dtWV
+         , logspace.add
+         , logspace.sub
+         , .suppHyper              # DPQ 0.4-0
+         , pnormL_LD10, pnormU_S53 # DPQ 0.4-2
+)
+
+importFrom("Rmpfr"
+         , getPrec, .getPrec
+         , mpfr, Const
+         , asNumeric
+         , dnorm, pnorm
+         , dpois
+         , log1mexp
+)
+
+importFrom("gmp"
+         , chooseZ
+)
+
+importClassesFrom("Rmpfr"
+                , "mpfr", "mpfrMatrix", "mpfrArray"
+)
+
+## importFrom("sfsmisc"
+##          , mult.fig
+##      )
+
+
+importFrom("stats"
+         , stats__dnorm = dnorm
+         , stats__pnorm = pnorm
+         , qnorm
+         , stats__dpois = dpois
+         , ppois, qpois
+         , stats__dbinom = dbinom
+         , dbeta, pbeta, qbeta
+         , dgamma, pgamma, qgamma
+         , dchisq, pchisq
+)
+
+importFrom("methods"
+         , new # <- seems not sufficient? R CMD check still wants me to import 'new'
+           ## trying these additionally to see if it helps -- it does not
+         , as, coerce
+         , is, initialize
+           )
+
+importFrom("utils"
+         , str
+           )
+
+### ------------------ Exports -------------------------------------------------
+
+## R/pbeta-Ding94.R :
+export(dbetaD94, pbetaD94, qbetaD94)
+## R/hyperDist.R :
+export(dhyperQ, phyperQ, phyperQall)# simple via chooseZ()
+## R/t-nonc.R :
+export(dntJKBm)
+
+## Re-export this R/dpq-mpfrized.R :
+export(pnormL_LD10, pnormU_S53)
