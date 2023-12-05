@@ -4,6 +4,25 @@
 \title{DPQmpfr News}
 \encoding{UTF-8}
 
+\section{Version 0.3-2 (2023-12-05, svn r281)}{
+  \subsection{NEW FEATURES}{
+    \itemize{
+      %% not yet exported nor documented  {maybe go to DPQ vignette tools ?}
+      \item utility functions for testing \code{dpois_raw()} etc, % ../R/dpoisEr.R
+      notably for package \CRANpkg{DPQ}.
+
+      \item new \dQuote{mpfr-ified} \code{pnormAsymp()} and \code{qnormAsymp()}
+
+      \item new \code{ldexp(f, E)} utility.
+    }
+  }
+  \subsection{Misc}{
+    \itemize{
+      \item URLs in \file{DESCRIPTION}
+    }
+  }
+}
+
 \section{Version 0.3-1 (2021-05-17, svn r174)}{
   \subsection{NEW FEATURES}{
     \itemize{
@@ -44,5 +63,3 @@
     }
   }
 }
-
-
