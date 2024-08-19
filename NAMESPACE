@@ -10,6 +10,10 @@ importFrom("DPQ"
          , .suppHyper              # DPQ 0.4-0
          , pnormL_LD10, pnormU_S53 # DPQ 0.4-2
          , pnormAsymp , qnormAsymp # DPQ 0.5-3
+## TODO  , DPQ__gam1    = gam1
+## TODO  , DPQ__algdiv  = algdiv
+## TODO  , DPQ__lgamma1p= lgamma1p
+## TODO  , DPQ__gamln1  = gamln1
 )
 
 importFrom("Rmpfr"
@@ -21,13 +25,13 @@ importFrom("Rmpfr"
          , dpois
          , log1mexp
          , .mpfr_erange
+         , roundMpfr
 )
 
 importFrom("gmp"
          , as.bigq, as.bigz
          , chooseZ
-##_TODO: once gmp_0.6-3 is on CRAN
-##_TODO: , dbinomQ
+         , dbinomQ
 )
 
 importClassesFrom("Rmpfr"
@@ -41,6 +45,7 @@ importFrom("sfsmisc"
 
 
 importFrom("stats"
+         , integrate
          , stats__dnorm = dnorm
          , stats__pnorm = pnorm
          , qnorm
@@ -80,7 +85,8 @@ export(dbetaD94, pbetaD94, qbetaD94)
 ## R/hyperDist.R :
 export(dhyperQ, phyperQ, phyperQall)# simple via chooseZ()
 ## R/t-nonc.R :
-export(dntJKBm)
+export(dntJKBm) # deprecated
+export(dtWVm)
 
 ## R/dnbinom-etc.R :
 ## Not needed, Rmpfr has the functionality!  export(dnbinomM, dnbinom.mu)
@@ -90,6 +96,14 @@ export(dntJKBm)
 # export(formatRng)
 # export(p.dpoisEr)
 # export(rE2mat)
+
+export(
+    lgamma1pM
+  , algdivM
+  , gam1M
+  , pbeta_ser
+)
+
 
 
 ## Re-export this R/dpq-mpfrized.R :
